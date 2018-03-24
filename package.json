@@ -1,0 +1,47 @@
+{
+    "name": "Ya-trigger",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc --outDir dist",
+        "test": "jest",
+        "watch:test": "nodemon -e ts -w src -x npm run test",
+        "watch": "nodemon -e ts -w src -x npm run watch:serve",
+        "watch:serve": "tsc --outDir dist && node --inspect dist/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^22.1.4",
+        "jest": "^22.4.2",
+        "nodemon": "^1.17.0",
+        "ts-jest": "^22.4.1",
+        "typescript": "^2.7.2"
+    },
+    "dependencies": {
+        "@types/node": "^9.4.6",
+        "nem-sdk": "^1.6.4"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
+        "transform": {
+            "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "testMatch": [
+            "**/src/**/*.test.ts?(x)"
+        ],
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "src/main/front/**/*.ts?(x)"
+        ]
+    }
+}
